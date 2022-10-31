@@ -6,11 +6,11 @@ const About = () => {
     return (
         <div className="hero my-20">
             <div className="hero-content flex-col lg:flex-row">
-                <div className='w-1/2 relative'>
+                <div className='lg:w-1/2 w-4/5 relative'>
                     <img alt="" src={person} className=" w-4/5 h-full rounded-lg shadow-2xl" />
                     <img alt="" src={parts} className="absolute w-3/5 right-5 top-1/2 border-2 rounded-lg shadow-2xl" />
                 </div>
-                <div className='w-1/2'>
+                <div className='lg:w-1/2 w-4/5 md:mt-16'>
                     <p className='text-2xl text-orange-600 font-bold'>About US</p>
                     <h1 className="text-5xl font-bold">We are qualified <br />
                      & of experience <br />
