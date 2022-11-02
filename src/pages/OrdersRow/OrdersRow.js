@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 
-const OrdersRow = ({ order }) => {
-    console.log(order)
-    const {serviceName, name, price, phone, service} = order;
+const OrdersRow = ({ order, handleDelete, handleStatusUpdate }) => {
+    // console.log(order)
+    const {_id, serviceName, name, price, phone, service, status} = order;
 
     const [serviceOrder, setServiceOrder] = useState({});
 
@@ -12,6 +12,8 @@ const OrdersRow = ({ order }) => {
         .then(data => setServiceOrder(data))
     } , [service])
 
+    
+
 
 
     return (
@@ -20,7 +22,7 @@ const OrdersRow = ({ order }) => {
             <tr>
                 <th>
                     <label>
-                        <input type="checkbox" className="checkbox" />
+                        <button onClick={ () => handleDelete(_id)} className='btn btn-ghost'>X</button>
                     </label>
                 </th>
                 <td>
@@ -45,7 +47,7 @@ const OrdersRow = ({ order }) => {
                 </td>
                 <td>Purple</td>
                 <th>
-                    <button className="btn btn-ghost btn-xs">{price}</button>
+                    <button onClick={ () => handleStatusUpdate(_id)} className="btn btn-ghost btn-xs">{ status ? status : 'pending' }</button>
                 </th>
             </tr>
 
